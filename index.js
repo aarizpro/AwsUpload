@@ -45,7 +45,7 @@ const upload = multer({
 });
 
 app.post('/upload', upload.single('file'), async function (req, res, next) {
-    res.send('Successfully uploaded ' + req.file.location + ' location!');
+    res.send(req.file.location);
 });
 app.get("/list", async (req, res) => {
     try {
